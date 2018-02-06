@@ -1,0 +1,55 @@
+$size: 10px;
+
+:host {
+    display: block;
+}
+.login {
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(3, 450px);
+        grid-template-rows: (1, 1fr);
+        align-content: stretch;
+        grid-auto-flow: column;
+        width: 100vw;
+        height: 100vh;
+        justify-content: end;
+    }
+
+    &__form  {
+        align-self: stretch;
+        grid-column: 3 / 3;
+        grid-row: 1;
+        background: rgba($color: #fff, $alpha: .8);
+        align-content: center; 
+        display: grid;               
+
+        > div {
+            padding: $size*4;            
+            align-self: center;
+        }
+
+        legend {
+            color: #56217C;
+            font-size: $size*3;
+            height: $size*6;
+            line-height: $size*6;
+    
+            img {
+                width: $size*5;
+                height: $size*5;
+                padding: 0 $size $size;
+                float: left;
+            }
+        }
+    }    
+
+    
+    
+    &__actions {
+        text-align: right;
+    }
+    &-field--full-width {
+        width: 100%;
+    }
+}
