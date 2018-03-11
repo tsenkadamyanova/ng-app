@@ -14,7 +14,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   constructor(
     private router: Router,
-    translate: TranslateService
+    private translate: TranslateService
   ) {
     // this language will be used as a fallback when a translation isn't found in the current language
     translate.setDefaultLang('en');
@@ -40,7 +40,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
   public getRandomImage(): void {
     // preload image
-    const pic1 = new Image();
+    const pic1: HTMLImageElement = new Image();
     const pic2 = new Image();
     const pic3 = new Image();
     const pic4 = new Image();

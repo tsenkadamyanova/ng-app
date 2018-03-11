@@ -4,6 +4,7 @@ import { LoginModule } from './login/login.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomeModule } from './home/home.module';
 import { TranslateService, TranslatePipe } from '@ngx-translate/core';
+import { UserService } from '../core/user.service';
 
 const items = [
     PageNotFoundComponent
@@ -23,7 +24,8 @@ export class PagesModule {
             ngModule: PagesModule,
             providers: [
                 TranslateService,
-                TranslatePipe
+                TranslatePipe,
+                UserService
             ]
         };
     }

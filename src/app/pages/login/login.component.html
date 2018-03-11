@@ -42,7 +42,9 @@
           mat-raised-button 
           color="primary"
           [disabled]="!loginForm.valid"
-          >Login</button>
+          (click)="login()"
+          >Login
+        </button>
       </div>
 
 

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { fadeInAnimation } from '../../shared/animations/animations';
 import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
+import { User } from '../../core/user';
+import { UserService } from '../../core/user.service';
 
 @Component({
   selector: 'app-login',
@@ -13,18 +15,28 @@ import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms'
   // host: { '[@fadeInAnimation]': '' },
 })
 export class LoginComponent implements OnInit {
-  constructor(private fb: FormBuilder) {
+  constructor(
+    protected userService: UserService,
+    private fb: FormBuilder
+  ) {
     this.createForm();
   }
   public hidePassword = true; // used to show or hide the password as text
   public loginForm: FormGroup;
 
-  get email() { return this.loginForm.get('email'); }
+  public get email() { return this.loginForm.get('email'); }
 
-  get password() { return this.loginForm.get('password'); }
+  public get password() { return this.loginForm.get('password'); }
+
+  private currentUser: User | null;
+
 
   public ngOnInit(): void {
     console.log(this.loginForm.controls);
+  }
+  public login(): void {
+    this.currentUser = this.userService.checkEmailAndPass(this.email.value, this.password.value);
+    console.log('current user is : ', this.currentUser);
   }
 
   /**
@@ -32,11 +44,12 @@ export class LoginComponent implements OnInit {
    *
    * @memberof LoginComponent
    */
-  createForm() {
+  private createForm() {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(10)]],
+      password: ['', [Validators.required, Validators.minLength(7)]],
     });
   }
+
 
 }
