@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
 body {
-    background-color: #56227D;
+    background-color: #069ef3;
     padding: 0;
     margin: 0;
 }

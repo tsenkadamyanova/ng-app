@@ -1,22 +1,48 @@
 <div class="login__container">
-  <form class="login__form" >
+  <form class="login__form" [formGroup]="loginForm" #loginFormGroup>
     <div>
-    <legend>
-      <!-- <img src="../../assets/branding1.svg"> -->
-      <span class="mat-display-1">My ng app</span>
-    </legend>
-    
+      <legend>
+        <h1>{{'HELLO' | translate }}</h1>
+        <span class="mat-display-1">My ng app</span>
+      </legend>
+
       <mat-form-field class="login-field--full-width">
-        <input matInput placeholder="Please enter your email" type="email">
-        <mat-error>This field is required</mat-error>
+        <input 
+          id="email"
+          matInput 
+          placeholder="Email" 
+          formControlName="email">
+        <mat-error *ngIf="email?.errors?.email && !email?.errors?.required">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="email?.errors?.required">
+          Email is
+          <strong>required</strong>
+        </mat-error>
       </mat-form-field>
+
       <mat-form-field class="login-field--full-width">
-        <input matInput placeholder="Please enter your password" type="password">
+        <input 
+          id="password"
+          matInput 
+          placeholder="Please enter your password" 
+          [type]="hidePassword ? 'password' : 'text'" 
+          formControlName="password"
+        >
+        <mat-icon 
+          matSuffix 
+          (click)="hidePassword = !hidePassword"
+          >{{hidePassword ? 'visibility' : 'visibility_off'}}
+        </mat-icon>
         <mat-error>This field is required</mat-error>
       </mat-form-field>
 
       <div class="login__actions">
-        <button mat-raised-button color="primary">Login</button>
+        <button 
+          mat-raised-button 
+          color="primary"
+          [disabled]="!loginForm.valid"
+          >Login</button>
       </div>
 
 

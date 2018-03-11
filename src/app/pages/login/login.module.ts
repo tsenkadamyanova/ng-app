@@ -4,9 +4,12 @@ import {
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
+    MatIconModule,
 } from '@angular/material';
 import { MatInputModule } from '@angular/material/input';
 import { LoginComponent } from './login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 @NgModule({
     imports: [
         CommonModule,
@@ -14,6 +17,10 @@ import { LoginComponent } from './login.component';
         MatButtonModule,
         MatCardModule,
         MatFormFieldModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatIconModule,
+        TranslateModule
     ],
     declarations: [
         LoginComponent

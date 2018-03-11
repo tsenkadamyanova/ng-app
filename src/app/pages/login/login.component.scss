@@ -1,4 +1,5 @@
 $size: 10px;
+$mainColor : #069ef3;
 
 :host {
     display: block;
@@ -20,7 +21,7 @@ $size: 10px;
         align-self: stretch;
         grid-column: 3 / 3;
         grid-row: 1;
-        background: rgba($color: #fff, $alpha: .8);
+        background: rgba($color: #fff, $alpha: .7);
         align-content: center; 
         display: grid;               
 
@@ -30,7 +31,7 @@ $size: 10px;
         }
 
         legend {
-            color: #56217C;
+            color: darken($mainColor, 3%);
             font-size: $size*3;
             height: $size*6;
             line-height: $size*6;

@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, RouterState, RoutesRecognized, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -11,24 +12,27 @@ export class AppComponent implements OnInit, OnDestroy {
   public randomImg: string;
   private currRoute: Subscription;
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    translate: TranslateService
+  ) {
+    // this language will be used as a fallback when a translation isn't found in the current language
+    translate.setDefaultLang('en');
 
+    // the lang to use, if the lang isn't available, it will use the current loader to get them
+    translate.use('en');
   }
 
   public ngOnInit() {
     this.currRoute = this.router.events.subscribe(event => {
       if (event instanceof RoutesRecognized) {
-        console.log('route state', event);
-        console.log('navigated to:', event.url);
-        console.log('route state', event.state);
-        console.log('');
       }
       if (event instanceof NavigationEnd) {
         // if u dont need the state, you could even use this event-type..
-        console.log('________________end=>', event);
+        // console.log('navigation end=>', event);
       }
     });
-    console.log(this.currRoute);
+    // console.log(this.currRoute);
     this.getRandomImage();
   }
   public ngOnDestroy() {

@@ -1,8 +1,9 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { LoginModule } from './login/login.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { HomeModule } from 'app/pages/home/home.module';
+import { HomeModule } from './home/home.module';
+import { TranslateService, TranslatePipe } from '@ngx-translate/core';
 
 const items = [
     PageNotFoundComponent
@@ -11,9 +12,19 @@ const items = [
 @NgModule({
     imports: [
         LoginModule,
-        HomeModule
+        HomeModule,
     ],
     declarations: items,
     exports: items
 })
-export class PagesModule { }
+export class PagesModule {
+    static forRoot(): ModuleWithProviders {
+        return {
+            ngModule: PagesModule,
+            providers: [
+                TranslateService,
+                TranslatePipe
+            ]
+        };
+    }
+}
