@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "email": "tobias.kief@me.com",
+        "password": "123456",
+        "firstName": "Tobias",
+        "lastName": "Kiefer",
+        "role": 1,
+        "image": "tobias_50x50.jpg"
+    },
+    {
+        "id": 2,
+        "email": "nina@cim.it",
+        "password": "123456",
+        "firstName": "Nina",
+        "lastName": "Pagon",
+        "role": 1,
+        "image": "nina_50x50.jpg"
+    },
+    {
+        "id": 3,
+        "email": "admin@admin.com",
+        "password": "dontknow",
+        "firstName": "John",
+        "lastName": "Snow",
+        "role": 2,
+        "image": "string"
+    },
+    {
+        "id": 4,
+        "email": "anotheruser@user.com",
+        "password": "dontknow",
+        "firstName": "string",
+        "lastName": "string",
+        "role": 1,
+        "image": "string"
+    },
+    {
+        "id": 5,
+        "email": "admin2@ad.com",
+        "password": "12134",
+        "firstName": "string",
+        "lastName": "string",
+        "role": 2,
+        "image": "string"
+    }
+]
