@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
   }
   public hidePassword = true; // used to show or hide the password as text
   public loginForm: FormGroup;
+  public users: Array<User> = [];
 
   public get email() { return this.loginForm.get('email'); }
 
@@ -32,16 +33,21 @@ export class LoginComponent implements OnInit {
 
 
   public ngOnInit(): void {
-    console.log(this.loginForm.controls);
+    // console.log(this.loginForm.controls);
+    this.userService.getAllUsers().subscribe(users => {
+      console.log('we have all users here: ', users);
+      this.users = users;
+    });
   }
   public login(): void {
-    this.currentUser = this.userService.checkEmailAndPass(this.email.value, this.password.value);
+    this.currentUser = this.checkEmailAndPass(this.users, this.email.value, this.password.value);
     console.log('current user is : ', this.currentUser);
   }
 
   /**
-   * Create login form fields
-   *
+   * Create login form with fields
+   * email field
+   * passord field
    * @memberof LoginComponent
    */
   private createForm() {
@@ -49,6 +55,15 @@ export class LoginComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(7)]],
     });
+  }
+
+  checkEmailAndPass(allUsers: Array<User>, email: string, password: string): any {
+    // get the user by email and pass
+    const currentUser = allUsers.find(myUser => {
+      return myUser.email === email && myUser.password === password;
+    });
+
+    return currentUser || null;
   }
 
 
