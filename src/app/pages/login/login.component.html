@@ -1,23 +1,23 @@
 <div class="login__container">
-  <form class="login__form" [formGroup]="loginForm" #loginFormGroup>
+  <form class="login__form" [formGroup]="loginForm"  (ngSubmit)="loginForm.valid && login()">
     <div>
       <legend>
         <h1>{{'HELLO' | translate }}</h1>
-        <span class="mat-display-1">My ng app</span>
+        <span class="mat-display-1">{{'TITLE' | translate }}</span>
       </legend>
 
       <mat-form-field class="login-field--full-width">
         <input 
           id="email"
           matInput 
-          placeholder="Email" 
+          placeholder="{{'LOGIN.EMAIL.PLACEHOLDER' | translate }}" 
           formControlName="email">
         <mat-error *ngIf="email?.errors?.email && !email?.errors?.required">
-          Please enter a valid email address
+          {{'LOGIN.EMAIL.ERRORS.INVALID' | translate }}
         </mat-error>
         <mat-error *ngIf="email?.errors?.required">
-          Email is
-          <strong>required</strong>
+          {{'LOGIN.EMAIL.ERRORS.REQUIRED.LABEL' | translate }}
+          <strong>{{'LOGIN.EMAIL.ERRORS.REQUIRED.BOLD' | translate }}</strong>
         </mat-error>
       </mat-form-field>
 
@@ -25,7 +25,7 @@
         <input 
           id="password"
           matInput 
-          placeholder="Please enter your password" 
+          placeholder="{{'LOGIN.PASSWORD.PLACEHOLDER' | translate }}" 
           [type]="hidePassword ? 'password' : 'text'" 
           formControlName="password"
         >
@@ -34,7 +34,10 @@
           (click)="hidePassword = !hidePassword"
           >{{hidePassword ? 'visibility' : 'visibility_off'}}
         </mat-icon>
-        <mat-error>This field is required</mat-error>
+        <mat-error *ngIf="password?.errors?.minlength && !password?.errors?.required">
+          {{'LOGIN.PASSWORD.ERRORS.MINLENGTH' | translate:param }}
+        </mat-error>
+        <mat-error *ngIf="password?.errors?.required">{{'LOGIN.PASSWORD.ERRORS.REQUIRED' | translate }}</mat-error>
       </mat-form-field>
 
       <div class="login__actions">
@@ -42,9 +45,15 @@
           mat-raised-button 
           color="primary"
           [disabled]="!loginForm.valid"
-          (click)="login()"
-          >Login
+          >{{'LOGIN.BUTTON.LOGIN' | translate }}
         </button>
+      </div>
+
+      <div 
+      class="login__errors"
+      *ngIf="showLoginError"
+      >
+        <p>{{'LOGIN.INCORECT' | translate}}</p>
       </div>
 
 

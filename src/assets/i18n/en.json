@@ -1,3 +1,27 @@
 {
-    "HELLO": "Welcome"
+    "HELLO": "Welcome",
+    "TITLE": "My ng app",
+    "LOGIN": {
+        "EMAIL": {
+            "PLACEHOLDER": "Enter your email",
+            "ERRORS": {
+                "INVALID": "Please enter a valid email address",
+                "REQUIRED": {
+                    "LABEL": "Email is",
+                    "BOLD": "required!"
+                }
+            }
+        },
+        "PASSWORD": {
+            "PLACEHOLDER": "Enter your password",
+            "ERRORS": {
+                "REQUIRED": "This field is required!",
+                "MINLENGTH": "The password should be at least {{length}}"
+            }
+        },
+        "BUTTON": {
+            "LOGIN": "Login"
+        },
+        "INCORECT":"Username or password is incorrect"
+    }
 }

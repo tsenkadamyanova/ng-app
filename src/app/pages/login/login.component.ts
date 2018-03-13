@@ -4,6 +4,8 @@ import { fadeInAnimation } from '../../shared/animations/animations';
 import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { User } from '../../core/user';
 import { UserService } from '../../core/user.service';
+import { AuthService } from '../../core/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,18 +17,23 @@ import { UserService } from '../../core/user.service';
   // host: { '[@fadeInAnimation]': '' },
 })
 export class LoginComponent implements OnInit {
+
   constructor(
     protected userService: UserService,
-    private fb: FormBuilder
+    protected authService: AuthService,
+    private fb: FormBuilder,
+    private router: Router
   ) {
     this.createForm();
   }
   public hidePassword = true; // used to show or hide the password as text
   public loginForm: FormGroup;
   public users: Array<User> = [];
+  public passwordLegth: number = 7;
+  public param = { length: this.passwordLegth };
+  public showLoginError = false;
 
   public get email() { return this.loginForm.get('email'); }
-
   public get password() { return this.loginForm.get('password'); }
 
   private currentUser: User | null;
@@ -41,7 +48,16 @@ export class LoginComponent implements OnInit {
   }
   public login(): void {
     this.currentUser = this.checkEmailAndPass(this.users, this.email.value, this.password.value);
+
     console.log('current user is : ', this.currentUser);
+    // if we have user, go to home
+    if (this.currentUser) {
+      this.showLoginError = false;
+      this.authService.login(this.currentUser);
+      this.router.navigate(['home']);
+    } else {
+      this.showLoginError = true;
+    }
   }
 
   /**
@@ -53,7 +69,7 @@ export class LoginComponent implements OnInit {
   private createForm() {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(7)]],
+      password: ['', [Validators.required, Validators.minLength(this.passwordLegth)]],
     });
   }
 

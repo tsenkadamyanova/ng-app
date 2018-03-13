@@ -1,5 +1,6 @@
 $size: 10px;
 $mainColor : #069ef3;
+$errorBg:#d65e86;
 
 :host {
     display: block;
@@ -12,7 +13,6 @@ $mainColor : #069ef3;
         grid-template-rows: (1, 1fr);
         align-content: stretch;
         grid-auto-flow: column;
-        width: 100vw;
         height: 100vh;
         justify-content: end;
     }
@@ -51,5 +51,10 @@ $mainColor : #069ef3;
     }
     &-field--full-width {
         width: 100%;
+    }
+    &__errors {
+        padding: $size $size*2;
+        margin: $size 0;
+        background: $errorBg;
     }
 }

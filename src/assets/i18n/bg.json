@@ -1,3 +1,27 @@
 {
-    "HELLO": "Добре дошли"
+    "HELLO": "Добре дошли!",
+    "TITLE": "My ng app",
+    "LOGIN": {
+        "EMAIL": {
+            "PLACEHOLDER": "Въведи е-майл",
+            "ERRORS": {
+                "INVALID": "Моля въведете валиден е-майл адрес",
+                "REQUIRED": {
+                    "LABEL": "Полето е-майл е ",
+                    "BOLD": "задължително!"
+                }
+            }
+        },
+        "PASSWORD": {
+            "PLACEHOLDER": "Въведи парола",
+            "ERRORS": {
+                "REQUIRED": "Полето за парола е задължително! ",
+                "MINLENGTH": "Въведената парола трябва да е по-голяма от {{length}}"
+            }
+        },
+        "BUTTON": {
+            "LOGIN": "Влезте"
+        },
+        "INCORECT":"Username or password is incorrect"
+    }
 }
