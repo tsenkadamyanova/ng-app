@@ -23,5 +23,9 @@
             "LOGIN": "Login"
         },
         "INCORECT":"Username or password is incorrect"
+    },
+    "HEADER": {
+        "WELCOME": "Wellcome to ng app",
+        "LOGOUT": "Logout"
     }
 }

@@ -1,0 +1,15 @@
+<header>
+  <h1>
+    {{'HEADER.WELCOME' | translate }}, <strong>{{user.firstname}} {{user.lastname}}</strong>
+  </h1>
+  <div>
+      <!-- If we want add content in the header  -->
+      <ng-content></ng-content>
+  </div>
+  <div>
+      <a 
+        (click)="logout()"
+        class="logout"
+        >{{'HEADER.LOGOUT'| translate }}</a>
+  </div>
+</header>

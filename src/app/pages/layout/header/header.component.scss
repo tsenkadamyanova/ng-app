@@ -1,0 +1,32 @@
+$mainColor : #069ef3;
+$size: 10px;
+$colorWhite: #fff;
+$border: #dddcdc;
+$headerBg : #89979E;
+
+:host {
+    display: block;
+}
+header {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: $size*2 $size*4;
+    border-bottom: 1px solid $border;
+    background: lighten($headerBg,10%);
+
+    h1 {
+        font-size: 2em;
+        font-weight: 400;
+    }
+}
+.logout {
+    display: inline;
+    background: $mainColor;
+    border-radius: 3px;
+    padding: $size/2 $size;
+    color: $colorWhite;
+    font-size: 1em;
+    line-height: 1.5;
+}

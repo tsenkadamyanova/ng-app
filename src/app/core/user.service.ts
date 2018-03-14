@@ -24,6 +24,7 @@ export class UserService {
   getCurrentUser(id: number): User {
     // return empty as we don't have real request
     // return this.http.get('/api/users/' + id);
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     return this.currentUser;
   }
 

@@ -1,0 +1,31 @@
+$mainColor : #069ef3;
+$size: 10px;
+$colorWhite: #fff;
+$itemSize: 120px;
+
+:host {
+    background: $mainColor;
+    color: $colorWhite;
+}
+.nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        display: block;
+        width: $itemSize;
+        height: $itemSize;
+        text-align: center;
+        line-height: $itemSize;
+        text-transform: uppercase;
+        cursor: pointer;
+        font-size: 0.8em;
+        border-bottom: 1px solid rgba($colorWhite, .3);
+        transition: 0.25s all ease-in-out;
+
+        &:hover {
+            background-color: darken($mainColor, 5%);
+        }
+    }
+}

@@ -43,6 +43,12 @@ export class AuthService {
     // remove user from local storage to log user out
     localStorage.removeItem('currentUser');
   }
+  /**
+   * Check if the user is logged in
+   *
+   * @returns {boolean} - true if we have user, otherwise false
+   * @memberof AuthService
+   */
   isLoggedIn(): boolean {
     return localStorage.getItem('currentUser') ? true : false;
   }

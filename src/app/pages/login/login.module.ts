@@ -12,9 +12,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { UserService } from '../../core/user.service';
 import { AuthService } from '../../core/auth.service';
+import { SharedModule } from '../../shared/shared.module';
 @NgModule({
     imports: [
-        CommonModule,
+        SharedModule,
         MatInputModule,
         MatButtonModule,
         MatCardModule,
@@ -22,7 +23,6 @@ import { AuthService } from '../../core/auth.service';
         FormsModule,
         ReactiveFormsModule,
         MatIconModule,
-        TranslateModule,
     ],
     declarations: [
         LoginComponent

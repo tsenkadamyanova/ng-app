@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   public hidePassword = true; // used to show or hide the password as text
   public loginForm: FormGroup;
   public users: Array<User> = [];
-  public passwordLegth: number = 7;
+  public passwordLegth = 7;
   public param = { length: this.passwordLegth };
   public showLoginError = false;
 

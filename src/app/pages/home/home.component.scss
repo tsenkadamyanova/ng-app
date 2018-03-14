@@ -1,0 +1,10 @@
+$bg : #fff;
+
+:host {
+    background: rgba($bg, 0.8);
+    display: grid;
+}
+.home {
+    align-self: stretch;
+    height: 100vh;
+}
