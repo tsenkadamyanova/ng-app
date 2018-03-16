@@ -10,24 +10,22 @@ export class MenuComponent implements OnInit {
 
   constructor() { }
 
-  public items = [];
+  public items = [
+    'Home',
+    'Users'
+  ];
 
   ngOnInit() {
     this.generateMenuItems();
   }
   /**
-   * Generate menu items from current roles
+   * Generate menu items from current
    *
    * @private
    * @memberof MenuComponent
    */
   private generateMenuItems() {
-    for (const role in Roles) {
-      if (isNaN(Number(role))) {
-        this.items.push(role);
-      }
 
-    }
   }
 
 }

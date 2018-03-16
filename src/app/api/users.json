@@ -1,21 +1,21 @@
 [
     {
         "id": 1,
-        "email": "tobias.kief@me.com",
+        "email": "tobias.lothen@me.com",
         "password": "123456",
         "firstname": "Tobias",
-        "lastname": "Kiefer",
+        "lastname": "Lothen",
         "role": 1,
-        "image": "tobias_50x50.jpg"
+        "image": "default-user.png"
     },
     {
         "id": 2,
-        "email": "nina@cim.it",
+        "email": "nina@me.it",
         "password": "123456",
         "firstname": "Nina",
-        "lastname": "Pagon",
+        "lastname": "Richie",
         "role": 1,
-        "image": "nina_50x50.jpg"
+        "image": "default-user.png"
     },
     {
         "id": 3,
@@ -24,24 +24,33 @@
         "firstname": "John",
         "lastname": "Snow",
         "role": 2,
-        "image": "string"
+        "image": "default-user.png"
     },
     {
         "id": 4,
-        "email": "anotheruser@user.com",
+        "email": "ian@me.com",
         "password": "dontknow",
-        "firstname": "string",
-        "lastname": "string",
+        "firstname": "Ian",
+        "lastname": "Down",
         "role": 1,
-        "image": "string"
+        "image": "default-user.png"
     },
     {
         "id": 5,
-        "email": "admin2@ad.com",
+        "email": "brat@me.com",
         "password": "12134",
-        "firstname": "string",
-        "lastname": "string",
+        "firstname": "Brat",
+        "lastname": "Pitt",
         "role": 2,
-        "image": "string"
+        "image": "default-user.png"
+    },
+    {
+        "id": 6,
+        "email": "johnny@me.com",
+        "password": "12134",
+        "firstname": "Johnny",
+        "lastname": "Dep",
+        "role": 1,
+        "image": "default-user.png"
     }
 ]

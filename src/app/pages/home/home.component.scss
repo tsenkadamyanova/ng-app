@@ -1,4 +1,9 @@
 $bg : #fff;
+$size: 10px;
+$mainColor : #069ef3;
+$searchbg: #bfbfbf;
+$userimg: 35px;
+$rowhover: #06f341;
 
 :host {
     background: rgba($bg, 0.8);
@@ -6,5 +11,56 @@ $bg : #fff;
 }
 .home {
     align-self: stretch;
-    height: 100vh;
+    
+    h2 {
+        padding: $size*2 $size*4;
+        font-weight: 400;
+    }
+
+    mat-header-row {
+        background: lighten($mainColor, 40%);
+        border-top: 1px solid lighten($mainColor, 10%);
+        border-bottom: 1px solid lighten($mainColor, 10%);
+        
+        .mat-header-cell {
+            font-size: 1em;
+        }
+    }
+}
+
+.users {
+    &__search {
+        background: lighten($searchbg, 15%);
+        border-top: 1px solid $searchbg;
+        padding: 0 $size*4;
+    }
+
+    &__table {
+        &--img {
+            flex: 0 0 80px;
+        }
+        img {
+            width: $userimg;
+            height: $userimg;
+            margin: $size;
+        }
+        &--highlight {
+            background: lighten($rowhover, 30%);
+            transition: 0.3s all ease-in-out;
+
+            
+        }
+
+        .mat-row {
+            &.users__table--highlight {
+                &:hover {
+                    background: lighten($rowhover, 30%);
+                }
+            }
+            &:hover {
+                background: lighten($rowhover, 40%);
+            }
+        }
+
+    }
 }

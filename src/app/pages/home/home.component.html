@@ -1,14 +1,69 @@
 <app-shell>
 
   <div class="home">
-  
-    <h3>All registered users:</h3>
-    <ul>
-      <li *ngFor="let user of users">
-        {{user.username}} ({{user.firstname}} {{user.lastname}}) -
-        <a (click)="deleteUser(user.id)">Delete</a>
-      </li>
-    </ul>
-</div>
 
+    <h2>{{'HOME.TITLE' | translate }}</h2>
+
+    <div class="users">
+      <div class="users__search">
+        <mat-form-field>
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="{{'USERS.FILTER' | translate }}">
+        </mat-form-field>
+      </div>
+
+      <div class="users__table">
+        <mat-table #table [dataSource]="dataSource" matSort>
+
+          <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+          <!-- Firstname Column -->
+          <ng-container matColumnDef="image">
+            <mat-header-cell *matHeaderCellDef [ngClass]="'users__table--img'">
+              {{'USERS.TABLE.IMAGE' | translate }}
+            </mat-header-cell>
+            <mat-cell *matCellDef="let element" [ngClass]="'users__table--img'">
+              <img src="../assets/{{element.image}}" alt="{{element.firstname}} {{element.lastname}}"> </mat-cell>
+          </ng-container>
+
+          <!-- Firstname Column -->
+          <ng-container matColumnDef="firstname">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> {{'USERS.TABLE.FIRSTNAME' | translate }} </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.firstname}} </mat-cell>
+          </ng-container>
+
+          <!-- Lastname Column -->
+          <ng-container matColumnDef="lastname">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> {{'USERS.TABLE.LASTNAME' | translate }} </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.lastname}} </mat-cell>
+          </ng-container>
+
+          <!-- Email Column -->
+          <ng-container matColumnDef="email">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> {{'USERS.TABLE.EMAIL' | translate }} </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+          </ng-container>
+
+          <!-- Role Column -->
+          <ng-container matColumnDef="role">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> {{'USERS.TABLE.ROLE' | translate }} </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.role}} </mat-cell>
+          </ng-container>
+
+          <!-- Password Column -->
+          <ng-container matColumnDef="password">
+            <mat-header-cell *matHeaderCellDef> {{'USERS.TABLE.PASSWORD' | translate }} </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.password}} </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row 
+            *matRowDef="let row; columns: displayedColumns;"
+            [ngClass]="{'users__table--highlight': selectedRowIndex == row.id}"
+            (click)="openUser(row)"
+            ></mat-row>
+        </mat-table>
+      </div>
+    </div>
+  </div>
 </app-shell>

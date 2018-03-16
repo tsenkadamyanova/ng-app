@@ -22,10 +22,24 @@
         "BUTTON": {
             "LOGIN": "Login"
         },
-        "INCORECT":"Username or password is incorrect"
+        "INCORECT": "Username or password is incorrect"
     },
     "HEADER": {
         "WELCOME": "Wellcome to ng app",
         "LOGOUT": "Logout"
+    },
+    "HOME": {
+        "TITLE": "All registered users"
+    },
+    "USERS": {
+        "FILTER": "Search",
+        "TABLE": {
+            "IMAGE": "Image",
+            "FIRSTNAME": "Firstname",
+            "LASTNAME": "Lastname",
+            "ROLE" : "Role",
+            "PASSWORD" : "Password",
+            "EMAIL" : "Email"
+        }
     }
 }
