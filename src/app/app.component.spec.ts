@@ -4,19 +4,58 @@ import { CustomMaterialModule } from './shared/material.module';
 import { APP_BASE_HREF } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
+import { TranslateModule, TranslateService, TranslatePipe } from '@ngx-translate/core';
+import { TranslateStore } from '@ngx-translate/core/src/translate.store';
+import { Observable } from 'rxjs/Observable';
+import { AuthGuard } from './core/auth.guard';
+import { Router, RouterModule, Routes, provideRoutes } from '@angular/router';
+import { Component } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+
+const testTranslation: any = { 'TITLE': 'This is a test' };
+
+export class TranslateServiceStub {
+
+  public get(key: any): any {
+    Observable.of(testTranslation);
+  }
+  public setDefaultLang(lang: any): void {}
+  public use(lang: any): void {}
+}
+
+@Component({
+  selector: 'app-test-cmp',
+  template: '<div class="title">Hello test</div>'
+})
+class TestRouterComponent {
+}
+
+const config: Routes = [
+  {
+      path: '', component: TestRouterComponent
+  }
+];
+
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
         CustomMaterialModule,
-        RouterTestingModule
+        RouterTestingModule,
+        RouterModule,
+        TranslateModule,
+        HttpClientModule
       ],
       declarations: [
         AppComponent,
+        TestRouterComponent
+
       ],
       providers: [
-        { provide: APP_BASE_HREF, useValue : '/' }
+        { provide: APP_BASE_HREF, useValue: '/' },
+        { provide: TranslateService, useClass: TranslateServiceStub },
+        provideRoutes(config)
       ]
     }).compileComponents();
   }));
