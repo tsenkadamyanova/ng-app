@@ -2,7 +2,7 @@
     {
         "id": 1,
         "email": "tobias.lothen@me.com",
-        "password": "123456",
+        "password": "dontknow1234",
         "firstname": "Tobias",
         "lastname": "Lothen",
         "role": 1,
@@ -11,7 +11,7 @@
     {
         "id": 2,
         "email": "nina@me.it",
-        "password": "123456",
+        "password": "dontknow1234",
         "firstname": "Nina",
         "lastname": "Richie",
         "role": 1,
@@ -20,7 +20,7 @@
     {
         "id": 3,
         "email": "admin@admin.com",
-        "password": "dontknow",
+        "password": "dontknow1234",
         "firstname": "John",
         "lastname": "Snow",
         "role": 2,
@@ -29,7 +29,7 @@
     {
         "id": 4,
         "email": "ian@me.com",
-        "password": "dontknow",
+        "password": "dontknow1234",
         "firstname": "Ian",
         "lastname": "Down",
         "role": 1,
@@ -38,7 +38,7 @@
     {
         "id": 5,
         "email": "brat@me.com",
-        "password": "12134",
+        "password": "dontknow1234",
         "firstname": "Brat",
         "lastname": "Pitt",
         "role": 2,
@@ -47,7 +47,7 @@
     {
         "id": 6,
         "email": "johnny@me.com",
-        "password": "12134",
+        "password": "dontknow1234",
         "firstname": "Johnny",
         "lastname": "Dep",
         "role": 1,

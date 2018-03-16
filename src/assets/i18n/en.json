@@ -29,9 +29,10 @@
         "LOGOUT": "Logout"
     },
     "HOME": {
-        "TITLE": "All registered users"
+        "TITLE": "This is the homepage"
     },
     "USERS": {
+        "TITLE": "All users",
         "FILTER": "Search",
         "TABLE": {
             "IMAGE": "Image",

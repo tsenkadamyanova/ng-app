@@ -13,7 +13,8 @@ import { MatSortModule, MatInputModule } from '@angular/material';
     SharedModule,
     MatTableModule,
     MatSortModule,
-    MatInputModule
+    MatInputModule,
+    HomeRoutingModule
   ],
   declarations: [
     HomeComponent

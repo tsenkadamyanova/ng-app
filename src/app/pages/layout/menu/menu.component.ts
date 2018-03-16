@@ -11,8 +11,14 @@ export class MenuComponent implements OnInit {
   constructor() { }
 
   public items = [
-    'Home',
-    'Users'
+    {
+      name: 'Home',
+      url: '/home',
+    },
+    {
+      name: 'Users',
+      url: '/users',
+    }
   ];
 
   ngOnInit() {

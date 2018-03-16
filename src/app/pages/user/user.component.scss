@@ -9,12 +9,12 @@ $rowhover: #06f341;
     background: rgba($bg, 0.8);
     display: grid;
 }
-.home {
+.user {
     align-self: stretch;
+    padding: $size*2 $size*4 ;
     
     h2 {
         padding: $size*2 $size*4;
         font-weight: 400;
     }
 }
-

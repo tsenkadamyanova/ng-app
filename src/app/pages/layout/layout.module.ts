@@ -5,6 +5,7 @@ import { MenuComponent } from './menu/menu.component';
 import { ShellComponent } from './shell/shell.component';
 import { SharedModule } from '../../shared/shared.module';
 import { TranslateModule, TranslateService, TranslatePipe } from '@ngx-translate/core';
+import { RouterModule } from '@angular/router';
 
 const items = [
   HeaderComponent,
@@ -14,7 +15,8 @@ const items = [
 @NgModule({
   imports: [
     CommonModule,
-    TranslateModule
+    TranslateModule,
+    RouterModule
   ],
   declarations: items,
   exports: [

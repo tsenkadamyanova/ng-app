@@ -12,12 +12,7 @@ $itemSize: 120px;
     margin: 0;
     padding: 0;
 
-    li {
-        display: block;
-        width: $itemSize;
-        height: $itemSize;
-        text-align: center;
-        line-height: $itemSize;
+    li {        
         text-transform: uppercase;
         cursor: pointer;
         font-size: 0.8em;
@@ -26,6 +21,16 @@ $itemSize: 120px;
 
         &:hover {
             background-color: darken($mainColor, 5%);
+        }
+
+        a {
+            display: block;
+            color: $colorWhite;
+            text-decoration: none;
+            width: $itemSize;
+            height: $itemSize;
+            text-align: center;
+            line-height: $itemSize;
         }
     }
 }

@@ -23,5 +23,24 @@
             "LOGIN": "Влезте"
         },
         "INCORECT":"Username or password is incorrect"
+    },
+    "HEADER": {
+        "WELCOME": "Добре дошли ng app",
+        "LOGOUT": "Изход"
+    },
+    "HOME": {
+        "TITLE": "Това е началната страница"
+    },
+    "USERS": {
+        "TITLE": "Всички потребители",
+        "FILTER": "Търси в потребители",
+        "TABLE": {
+            "IMAGE": " ",
+            "FIRSTNAME": "Име",
+            "LASTNAME": "Фамилия",
+            "ROLE" : "Роля",
+            "PASSWORD" : "Парола",
+            "EMAIL" : "е-мейл"
+        }
     }
 }

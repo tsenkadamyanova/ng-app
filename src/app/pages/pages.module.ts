@@ -5,6 +5,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HomeModule } from './home/home.module';
 import { TranslateService, TranslatePipe } from '@ngx-translate/core';
 import { UserService } from '../core/user.service';
+import { UserModule } from './user/user.module';
+import { UsersModule } from './users/users.module';
 
 const items = [
     PageNotFoundComponent
@@ -14,6 +16,8 @@ const items = [
     imports: [
         LoginModule,
         HomeModule,
+        UserModule,
+        UsersModule
     ],
     declarations: items,
     exports: items

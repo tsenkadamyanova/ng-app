@@ -12,6 +12,7 @@
           matInput 
           placeholder="{{'LOGIN.EMAIL.PLACEHOLDER' | translate }}" 
           formControlName="email">
+          <mat-hint align="end">admin@admin.com</mat-hint>
         <mat-error *ngIf="email?.errors?.email && !email?.errors?.required">
           {{'LOGIN.EMAIL.ERRORS.INVALID' | translate }}
         </mat-error>
@@ -34,6 +35,7 @@
           (click)="hidePassword = !hidePassword"
           >{{hidePassword ? 'visibility' : 'visibility_off'}}
         </mat-icon>
+        <mat-hint align="end">dontknow1234</mat-hint>
         <mat-error *ngIf="password?.errors?.minlength && !password?.errors?.required">
           {{'LOGIN.PASSWORD.ERRORS.MINLENGTH' | translate:param }}
         </mat-error>
